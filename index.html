@@ -106,13 +106,24 @@
 
         /* Bottom Nav */
         #bottom-nav {
-            position: absolute; bottom: 25px; left: 20px; right: 20px;
-            height: 70px; background: var(--nav-bg);
-            backdrop-filter: blur(15px); border-radius: 25px;
-            display: none; justify-content: space-around; align-items: center;
-            border: 1px solid var(--border);
-            box-shadow: 0 15px 30px var(--shadow);
-        }
+    position: fixed; /* Ubah ke fixed agar tetap di bawah layar */
+    bottom: 20px;    /* Memberikan jarak dari bawah layar */
+    left: 20px; 
+    right: 20px;
+    height: 70px; 
+    background: var(--nav-bg);
+    backdrop-filter: blur(15px); 
+    border-radius: 25px;
+    display: none; 
+    justify-content: space-around; 
+    align-items: center;
+    border: 1px solid var(--border);
+    box-shadow: 0 15px 30px var(--shadow);
+    z-index: 1000;  /* Memastikan navigasi selalu di atas konten lain */
+    
+    /* Tambahan untuk mendukung Safe Area iOS/Android */
+    padding-bottom: env(safe-area-inset-bottom);
+}
 
         .nav-item { text-align: center; color: var(--text-dim); cursor: pointer; font-size: 10px; font-weight: 600; }
         .nav-item i { font-size: 22px; display: block; margin-bottom: 4px; }
